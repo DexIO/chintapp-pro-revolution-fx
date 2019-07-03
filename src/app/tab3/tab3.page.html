@@ -1,9 +1,52 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
+<ion-header mode="ios">
+    <ion-title class="tituloApp">
+        Perfil
     </ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <div class="botonPublicar">
+        <app-auth></app-auth>
+
+        <div (click)="presentActionSheet()">
+
+            <svg width="6px" height="25px" viewBox="0 0 6 25" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" class="submenu_icon">
+                <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+                <title>Rectangle 4</title>
+                <desc>Created with Sketch.</desc>
+                <g id="DexIO-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="iPhone-X-Mockup" transform="translate(-33.000000, -141.000000)" fill="#EE4466">
+                        <g id="Screen">
+                            <g transform="translate(24.000000, 20.000000)">
+                                <g id="Group-5" transform="translate(-286.000000, 52.000000)">
+                                    <rect id="Rectangle-4" x="295" y="69" width="6" height="25"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <h2 class="submenu">{{option.selected}}</h2>
+        </div>
+
+
+        <div *ngIf="option.id == 0">
+            <app-cartas-usuario></app-cartas-usuario>
+        </div>
+
+        <div *ngIf="option.id == 1">
+            <app-colecciones></app-colecciones>
+        </div>
+
+        <div *ngIf="option.id == 2">
+            <app-people></app-people>
+        </div>
+
+        <div *ngIf="option.id == 3">
+            <app-settings></app-settings>
+        </div>
+
+
+    </div>
+</ion-content>

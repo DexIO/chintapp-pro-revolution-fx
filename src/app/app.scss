@@ -1,6 +1,76 @@
 // App Styles
 // ----------------------------------------------------------------------------
-// Put style rules here that you want to apply to the entire application. These 
-// styles are for the entire app and not just one component. Additionally, this 
-// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+
+.tituloApp {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: #000;
+}
+
+$font-family-base: "Open Sans", sans-serif !default;
+body {
+  font-family: "Fira Sans", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+h1, h2, button {
+  font-family: "Fira Sans", sans-serif !important;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.botonPublicar {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.masonry { /* Masonry container */
+  column-count: 2;
+}
+
+.item { /* Masonry bricks or child elements */
+  display: inline-block;
+  width: 100%;
+}
+
+.derecha {
+  float: right;
+  font-size: 21px;
+}
+
+.submenu {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.submenu_icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 6px;
+}
+
+.glyphicon {
+  transition: all .5s;
+
+  &.glyphicon-heart {
+    color: #e74c3c;
+  }
+
+  &.glyphicon-heart-empty {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

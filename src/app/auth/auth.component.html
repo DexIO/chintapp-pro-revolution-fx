@@ -1,0 +1,43 @@
+<div *ngIf="isLoggedIn; else loginTemplate">
+
+    <div *ngIf="!user.alias">
+        <h2>Vaya, aún no tienes un nombre de usuario, por favor, introduce uno</h2>
+        <ion-card mode="ios">
+            <ion-card-header>
+                <ion-card-title>
+                    <ion-textarea rows="2" placeholder="Escribe aquí..." maxlength="50"
+                                  [(ngModel)]="aux"></ion-textarea>
+                </ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <ion-button class="botonPublicar" expand="block" mode="ios" (click)="asignarAlias()">
+            Confirmar
+        </ion-button>
+
+    </div>
+
+    <div *ngIf="user.alias">
+        <ion-row>
+            <ion-col size="8">
+
+                <h3>{{mensaje}}{{ user.alias }}</h3>
+                <ion-icon name="folder-open" size="large"></ion-icon>
+
+            </ion-col>
+
+            <ion-col size="4">
+                <img [src]="user.imageUrl" class="perfil">
+            </ion-col>
+        </ion-row>
+
+        <ion-button (click)="logout()" mode="ios" expand="block" color="danger">Cerrar sesión</ion-button>
+    </div>
+
+
+</div>
+
+<ng-template #loginTemplate>
+    <h2>Para poder continuar debes iniciar sesión</h2>
+    <ion-button (click)="loginGoogle()" mode="ios" expand="block">Conectar con Google</ion-button>
+</ng-template>

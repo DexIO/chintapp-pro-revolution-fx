@@ -1,5 +1,7 @@
 {
   "name": "chintapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
+<ion-header mode="ios">
+    <ion-title class="tituloApp">
+        Nueva carta
     </ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+    <ion-card mode="ios">
+        <ion-card-header>
+            <ion-card-title>
+                <ion-textarea rows="3" placeholder="Escribe aquí..." maxlength="100"
+                              [(ngModel)]="respuesta.contenido"></ion-textarea>
+            </ion-card-title>
+            <ion-card-subtitle>@{{usuario.alias}}</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-button class="botonPublicar" expand="block" mode="ios" (click)="publicarRespuesta()">
+        <ion-icon slot="start" name="cloud-upload"></ion-icon>
+        Publicar carta de respuesta
+    </ion-button>
+
+    <ion-card mode="ios" color="dark">
+        <ion-card-header>
+            <ion-card-title>
+                <ion-textarea rows="3" placeholder="Escribe aquí..." maxlength="100"
+                              [(ngModel)]="pregunta.contenido"></ion-textarea>
+            </ion-card-title>
+            <ion-card-subtitle>@{{usuario.alias}}</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+
+    <ion-button class="botonPublicar" expand="block" mode="ios" (click)="publicarPregunta()">
+        <ion-icon slot="start" name="cloud-upload"></ion-icon>
+        Publicar carta de pregunta
+    </ion-button>
+
+</ion-content>
